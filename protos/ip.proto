@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ip;
+
+option go_package = "github.com/chrigeeel/debug-grpc-server/protos";
+
+service IPService {
+  rpc GetIP (IPRequest) returns (IPResponse) {}
+}
+
+message IPRequest {}
+
+message IPResponse {
+  string ip = 1;
+}
