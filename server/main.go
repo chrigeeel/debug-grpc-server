@@ -17,6 +17,8 @@ type server struct {
 }
 
 func (s *server) GetIP(ctx context.Context, req *pb.IPRequest) (*pb.IPResponse, error) {
+	log.Println("request")
+
 	p, ok := peer.FromContext(ctx)
 	if !ok {
 		return nil, fmt.Errorf("failed to get peer from context")
