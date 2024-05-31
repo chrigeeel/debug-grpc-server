@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	SERVER_ENDPOINT = ""
+	SERVER_ENDPOINT = "208.91.106.21:29381"
 )
 
 func main() {

@@ -31,13 +31,13 @@ func (s *server) GetIP(ctx context.Context, req *pb.IPRequest) (*pb.IPResponse, 
 }
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", ":29381")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	grpcServer := grpc.NewServer()
 	pb.RegisterIPServiceServer(grpcServer, &server{})
-	log.Println("Server is running on port :50051")
+	log.Println("Server is running on port :29381")
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
